@@ -9,10 +9,10 @@ import json
 import urllib
 from bs4 import BeautifulSoup
 
-consumer_key = "N3pgRaDRSsgLP1ILBlvmJ1rmb"
-consumer_secret = "MdEEFeMa3TEyrqDPVp4pmnkAyEumFp4eSuOoZvyiWf6nz4gUsn"
-access_key = "1038159139044614144-r2izX0LUAvoDU5JQnAGgbKkDujxpwm"
-access_secret = "I1RAaBTptSdNIMZTc0hViMQ4GsYYqLxwcqJWFSVP0jdBs"
+consumer_key = ""
+consumer_secret = ""
+access_key = ""
+access_secret = ""
 
 
 def get_all_tweets(screen_name):
