@@ -6,8 +6,9 @@
 
 import tweepy
 import json
-import urllib
-from bs4 import BeautifulSoup
+import wget
+#import urllib
+#from bs4 import BeautifulSoup
 
 consumer_key = ""
 consumer_secret = ""
@@ -42,24 +43,19 @@ def get_all_tweets(screen_name):
         if(len(alltweets) > 15):
             break
         print("...%s tweets downloaded so far" % (len(alltweets)))
-       
-    file = open('tweet.json', 'w') 
-    print("Writing tweet objects to JSON please wait...")
-    for status in alltweets:
-        json.dump(status._json,file,sort_keys = True,indent = 4)
-    
-    print("Done")
-    file.close()
 
-def get_image(info):
-	soup = BeautifulSoup(info,'html.parser')
-	all_image = soup.find_all('img',class_ = "BDE_Image")
-	x=1
-	for image in all_image:
-		print(all_image)
-		urllib.request.urlretrieve(image['scr'],"/home/ece-student/Pictures/%s.jpg"%(x))
-		x = x+1
+    tweetsmedia = set()
+    for status in alltweets:
+        media = status.entities.get('media',[])
+        if (len(media)>0):
+            tweetsmedia.add(media[0]['media_url'])
+    
+    #i=1
+    for url in tweetsmedia:
+        wget.download(url) #-O /home/ece-student/pictures/image%d.jpg %i
+        #i += 1
+        pass   
 
 if __name__ == '__main__':
-    info = get_all_tweets("@Apple")
-    get_image(info)
+    get_all_tweets("@maroon5")
+    
