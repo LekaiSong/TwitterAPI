@@ -4,12 +4,12 @@ import argparse
 from google.cloud import videointelligence
     
 
-def google(screen_name):
+def google():
     #https://cloud.google.com/video-intelligence/docs/analyze-labels#video_analyze_labels-python
     video_client = videointelligence.VideoIntelligenceServiceClient()
     features = [videointelligence.enums.Feature.LABEL_DETECTION]
 
-    with io.open(path,'rb')as movie:
+    with io.open('/home/ece-student/'+""+screen_name+".mp4",'rb')as movie:
         input_content = movie.read()
 
     operation = video_client.annotate_video(features=features, input_content=input_content)
@@ -25,6 +25,7 @@ def google(screen_name):
         for category_entity in segment_label.category_entities:
             print('\tLabel category description: {}'.format(category_entity.description))
 
+        #show the matching degree
         for i, segment in enumerate(segment_label.segments):
             confidence = segment.confidence
             print('\tConfidence: {}'.format(confidence))
