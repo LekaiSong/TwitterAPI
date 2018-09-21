@@ -7,7 +7,6 @@ import tweepy
 import os
 import urllib
 from urllib import request
-
 import sys
 import io
 import argparse
@@ -55,25 +54,26 @@ def get_all_tweets(screen_name):
         if (len(media)>0):
             tweetsmedia.add(media[0]['media_url'])
     
+    #download images named 01~25
     i=0
     for url in tweetsmedia:
-        #print(url)
+        print(url)
         urllib.request.urlretrieve(url,'/home/ece-student/Pictures/%02d.jpg'%i)
         i += 1
     #for url in tweetsmedia:
         #wget.download -c 'url' -O 'image%d'%i
 
-
+#image duration depends on -r
 def convert(screen_name):
     os.system("ffmpeg -f image2 -r 0.2 -i /home/ece-student/Pictures/%02d.jpg "+screen_name+".mp4")
     
-
-def google(screen_name):
+#must pip install google-cloud-videointelligence
+def google():
     #https://cloud.google.com/video-intelligence/docs/analyze-labels#video_analyze_labels-python
     video_client = videointelligence.VideoIntelligenceServiceClient()
     features = [videointelligence.enums.Feature.LABEL_DETECTION]
 
-    with io.open(path,'rb')as movie:
+    with io.open('/home/ece-student/'+""+screen_name+".mp4",'rb')as movie:
         input_content = movie.read()
 
     operation = video_client.annotate_video(features=features, input_content=input_content)
@@ -89,6 +89,7 @@ def google(screen_name):
         for category_entity in segment_label.category_entities:
             print('\tLabel category description: {}'.format(category_entity.description))
 
+        #show the matching degree
         for i, segment in enumerate(segment_label.segments):
             confidence = segment.confidence
             print('\tConfidence: {}'.format(confidence))
@@ -98,4 +99,4 @@ if __name__ == '__main__':
     screen_name = "@maroon5"
     get_all_tweets(screen_name)
     convert(screen_name)
-    google(screen_name)
+    google()
