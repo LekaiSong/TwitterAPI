@@ -2,6 +2,7 @@
 # encoding: utf-8
 #Author - Lekai Song
 
+#code with "##" is what author have tried but failed.
 
 import tweepy
 import os
@@ -11,8 +12,8 @@ import sys
 import io
 import argparse
 from google.cloud import videointelligence
-#import wget
-#from bs4 import BeautifulSoup
+##import wget
+##from bs4 import BeautifulSoup
 
 consumer_key = ""
 consumer_secret = ""
@@ -60,8 +61,8 @@ def get_all_tweets(screen_name):
         print(url)
         urllib.request.urlretrieve(url,'/home/ece-student/Pictures/%02d.jpg'%i)
         i += 1
-    #for url in tweetsmedia:
-        #wget.download -c 'url' -O 'image%d'%i
+    ##for url in tweetsmedia:
+        ##wget.download -c 'url' -O 'image%d'%i
 
 #image duration depends on -r
 def convert(screen_name):
