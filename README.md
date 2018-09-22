@@ -1,4 +1,5 @@
 EC601-MiniProject1- Twitter & Google VideoIntelligence API
+
 The aim of Miniproject is to build a library (in python) that downloads images from a twitter feed, convert them to a video and describe the content of the images in the video.
 
 1.Use Tweepy to Download Images
