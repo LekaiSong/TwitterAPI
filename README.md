@@ -19,7 +19,7 @@ At last, type "python Tweepy-images.py" in the terminal.
 
 Type "pip install ffmpeg" to install ffmpeg. 
 Run the "convert_to_video.py" which calls a system command "ffmpeg -f image2 -r 0.2 -i /home/ece-student/Pictures/%02d.jpg "+screen_name+".mp4" to output a mp4. 
-Ps: The duration of every image is depends on the number after "-r" so that you can decide the length of your video. 
+Ps: The duration of every image depends on the number after "-r" so that you can decide the length of your video. 
 
 3.Use Google-Cloud-VideoIntelligence API to analyze Images
 
