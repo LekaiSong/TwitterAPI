@@ -1,13 +1,20 @@
+#!/usr/bin/env python
 import tweepy
 import os
 import urllib
-from urllib import request
+import argparse
+##import wget
+##from bs4 import BeautifulSoup
 
-consumer_key = ""
-consumer_secret = ""
-access_key = ""
-access_secret = ""
+consumer_key = "TbOHFkGD6O6MkZmUwZaEJeFvS"
+consumer_secret = "g1wbA7SHlPXvKJASVnagWYHQYb3pC47smsIDkfeVX63OVHlMMS"
+access_key = "1038159139044614144-ux2em514t7bsDWRtjUm06LztrK090M"
+access_secret = "36ZjqZh8TeOGuzU7U1jpsmKZ5aOYew3QDKQYxuiTYechB"
 
+ap = argparse.ArgumentParser()
+ap.add_argument("-u", "--user", required=True, help="user you're interested in")
+ap.add_argument("-i", "--images", required=True, help="amount of images you want to download")
+args = vars(ap.parse_args())
 
 def get_all_tweets(screen_name):
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
@@ -33,7 +40,7 @@ def get_all_tweets(screen_name):
         
         #update the id of the oldest tweet less one
         oldest = alltweets[-1].id - 1
-        if(len(alltweets) > 25):
+        if(len(alltweets) > int(args["images"])):
             break
         print("...%s tweets downloaded so far" % (len(alltweets)))
 
@@ -43,10 +50,11 @@ def get_all_tweets(screen_name):
         if (len(media)>0):
             tweetsmedia.add(media[0]['media_url'])
     
+    #download images named 01~25
     i=0
     for url in tweetsmedia:
-        #print(url)
-        urllib.request.urlretrieve(url,'/home/ece-student/Pictures/%02d.jpg'%i)
+        print(url)
+        urllib.request.urlretrieve(url, os.getcwd()+'/%02d.jpg'%i)
         i += 1
-    #for url in tweetsmedia:
-        #wget.download -c 'url' -O 'image%d'%i
+    ##for url in tweetsmedia:
+        ##wget.download -c 'url' -O 'image%d'%i
