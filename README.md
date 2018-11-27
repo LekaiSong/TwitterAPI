@@ -2,11 +2,11 @@ EC601-MiniProject1- Twitter & Google VideoIntelligence API
 
 The aim of Miniproject is to build a library (in python) that downloads images from a twitter feed, convert them to a video and describe the content of the images in the video.
 
-1.Use Tweepy to Download Images
+1. Use Tweepy to Download Images
 
-2.Use FFMPEG to Convert Images into a Video
+2. Use FFMPEG to Convert Images into a Video
 
-3.Use Google-Cloud-VideoIntelligence API to analyze Images
+3. Use Google-Cloud-VideoIntelligence API to analyze Images
 
 Environment Preparation:
 1) Get the Twitter API Credential:
@@ -15,7 +15,7 @@ Go to https://developer.twitter.com/content/developer-twitter/en.html and apply 
 2) Set up the Google Cloud VideoIntelligence environment:
 Go to https://cloud.google.com/video-intelligence/docs/analyze-labels#video_analyze_labels-python and follow the instructions.
 
-3) Install Tweepy,FFMPEG:
+3) Install Tweepy & FFMPEG:
 Type "pip install tweepy" in the terminal.
 Type "pip install ffmpeg" to install ffmpeg. 
 
