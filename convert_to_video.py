@@ -1,5 +1,6 @@
-import sys
+#!/usr/bin/env python
 import os
 
-def convert(screen_name):
-    os.system("ffmpeg -f image2 -r 0.2 -i /home/ece-student/Pictures/%02d.jpg "+screen_name+".mp4")
+#image duration depends on -r
+def convert_to_video(screen_name):
+    os.system("ffmpeg -f image2 -r 0.5 -i './%02d.jpg' "+screen_name+".mp4")
