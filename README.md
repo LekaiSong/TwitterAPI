@@ -20,8 +20,6 @@ Type "pip install tweepy" in the terminal.
 Type "pip install ffmpeg" to install ffmpeg. 
 
 4) Run the project:
-"python Miniproject.py -u @UserYouAreInterestedIn -i AmountOfImagesToDownload"
-
-The output file named @UserYouAreInterestedIn.mp4 is stored in the current path.
+"python Miniproject.py -u @UserYouAreInterestedIn -i AmountOfImagesToDownload". The output file named @UserYouAreInterestedIn.mp4 is stored in the current path.
 
 Once you have run the program successfully, you can see that images unloaded by users are downloaded in your file now and the API automatically analyze what the images are about. Meanwhile, a wonderful video is presented to you.
