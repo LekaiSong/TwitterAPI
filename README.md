@@ -26,6 +26,6 @@ Twitter & Google VideoIntelligence APIs
 >#### 4) Run the project:
 >>#### 'python Miniproject1.py -u @UserYouAreInterestedIn -i AmountOfImagesToDownload'. <br> The output file named @UserYouAreInterestedIn.mp4 is stored in the current path.
 >>#### eg. 'python Miniproject1.py -u @maroon5 -i 100'
->>![screenshot](http://github.com/LekaiSong/Twitter-API/raw/master/maroon5_terminal_screenshot.png)
+![screenshot](http://github.com/LekaiSong/Twitter-API/raw/master/maroon5_terminal_screenshot.png)
 
 #### Once you have run the program successfully, you can see that images unloaded by users are downloaded in your file now and the API automatically analyze what the images are about. Meanwhile, a wonderful video is presented to you.
