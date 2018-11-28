@@ -24,8 +24,8 @@ Twitter & Google VideoIntelligence APIs
 >>#### Type "pip install ffmpeg" to install ffmpeg. 
 
 >#### 4) Run the project:
->>#### "python Miniproject1.py -u @UserYouAreInterestedIn -i AmountOfImagesToDownload". 
->>#### The output file named @UserYouAreInterestedIn.mp4 is stored in the current path.
+>>#### 'python Miniproject1.py -u @UserYouAreInterestedIn -i AmountOfImagesToDownload'. <br> The output file named @UserYouAreInterestedIn.mp4 is stored in the current path.
 >>#### eg. 'python Miniproject1.py -u @maroon5 -i 100'
+>>![screenshot]()
 
 #### Once you have run the program successfully, you can see that images unloaded by users are downloaded in your file now and the API automatically analyze what the images are about. Meanwhile, a wonderful video is presented to you.
