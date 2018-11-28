@@ -1,15 +1,17 @@
-import sys
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+import os
 import io
-import argparse
 from google.cloud import videointelligence
-    
 
-def google():
+#must pip install google-cloud-videointelligence
+def google_analysis():
     #https://cloud.google.com/video-intelligence/docs/analyze-labels#video_analyze_labels-python
+    os.environ["GOOGLE_APPLICATION_CREDENTIALS"]=os.getcwd()+'/google.json'
     video_client = videointelligence.VideoIntelligenceServiceClient()
     features = [videointelligence.enums.Feature.LABEL_DETECTION]
 
-    with io.open('/home/ece-student/'+""+screen_name+".mp4",'rb')as movie:
+    with io.open(os.path.join(os.getcwd(),""+screen_name+".mp4"),'rb')as movie:
         input_content = movie.read()
 
     operation = video_client.annotate_video(features=features, input_content=input_content)
