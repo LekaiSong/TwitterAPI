@@ -28,4 +28,5 @@ Twitter & Google VideoIntelligence APIs
 >>#### eg. 'python Miniproject1.py -u @maroon5 -i 100'
 >>![screenshot](https://github.com/LekaiSong/Twitter-API/blob/master/maroon5_terminal_screenshot.png)
 
+### 3. Result
 #### Once you have run the program successfully, you can see that images unloaded by users are downloaded in your file now and the API automatically analyze what the images are about. Meanwhile, a wonderful video is presented to you.
