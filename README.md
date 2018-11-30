@@ -1,7 +1,5 @@
-EC601-MiniProject1
-==================
-Twitter & Google VideoIntelligence APIs
----------------------------------------
+# Twitter & Google VideoIntelligence APIs
+### EC601-Miniproject1
 
 ### 1. Goal
 ### To build a library (in python) that downloads images from a twitter feed, convert them to a video and describe the content of the images in the video.
